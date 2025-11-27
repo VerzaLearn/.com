@@ -57,6 +57,13 @@
         .live-dot {
             animation: pulse-live 1.5s infinite;
         }
+
+        /* No longer needed since we use SVG with Tailwind sizes, but keeping for reference
+        .verza-logo-header, .verza-logo-footer, .verza-logo-cta {
+            width: auto;
+            height: auto;
+        }
+        */
     </style>
 </head>
 <body class="text-gray-900">
@@ -65,9 +72,13 @@
     <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-sm shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
             <!-- Logo/Name -->
-            <div class="flex items-center space-x-1">
-                <svg class="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            <div class="flex items-center space-x-2">
+                <!-- NEW SVG LOGO: HEADER (32px / w-8 h-8) -->
+                <svg class="w-8 h-8 rounded-full" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Background Circle/Rounded Square (Same as the image) -->
+                    <rect x="0" y="0" width="100" height="100" rx="20" fill="#10B981"/>
+                    <!-- Stylized 'V' (Using path for the geometric look) -->
+                    <path d="M 28 35 L 50 75 L 72 35 L 63 35 L 50 60 L 37 35 Z" fill="white"/>
                 </svg>
                 <span class="text-xl font-bold text-gray-800">verza</span>
             </div>
@@ -106,8 +117,9 @@
                             Join Community
                         </button>
                     </div>
+                    <!-- TEXT CHANGE: Removed statistic to reflect pre-launch status. -->
                     <p class="mt-4 text-sm text-gray-500">
-                        Be first in line when we launch
+                        Verza brings fun and competition to any subject, keeping students engaged and motivated.
                     </p>
                 </div>
                 
@@ -118,7 +130,8 @@
                         <!-- Quiz Header -->
                         <div class="flex items-center justify-between border-b pb-3 mb-4">
                             <div class="flex items-center space-x-2">
-                                <svg class="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9.25 21L13.75 21L14.25 17M12 3v18"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3l7 7-7 7-7-7 7-7z"></path></svg>
+                                <!-- QUIZ CARD ICON REMAINS 🎮 (Game controller) -->
+                                <span class="text-lg text-green-500" role="img" aria-label="Game controller">🎮</span>
                                 <span class="text-sm font-semibold">Science Battle</span>
                                 <span class="text-xs text-gray-500">24 players • Q7/15</span>
                             </div>
@@ -245,8 +258,9 @@
                     
                     <!-- Feature Card 1: Live Games (Green) -->
                     <div class="p-6 rounded-xl">
-                        <div class="inline-flex p-4 rounded-full bg-green-100 text-green-600">
-                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.63l-2.5-10.5M4 8v10M17 14h-4M7 8h4M7 14h4M12 4v16M3 12h2"></path></svg>
+                        <div class="inline-flex p-4 rounded-full bg-green-100">
+                            <!-- ICON REMAINS ⚔️ (Crossed Swords for "battles") -->
+                            <span class="text-3xl" role="img" aria-label="Crossed Swords">⚔️</span>
                         </div>
                         <h3 class="mt-4 text-xl font-semibold text-gray-900">Live Games</h3>
                         <p class="mt-2 text-gray-500">
@@ -256,8 +270,9 @@
 
                     <!-- Feature Card 2: Earn & Climb (Orange) -->
                     <div class="p-6 rounded-xl">
-                        <div class="inline-flex p-4 rounded-full bg-yellow-100 text-yellow-600">
-                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 11l3-3m0 0l3 3m-3-3v8m0 0a9 9 0 110-18 9 9 0 010 18z"></path></svg>
+                        <div class="inline-flex p-4 rounded-full bg-yellow-100">
+                            <!-- ICON REMAINS 🏆 (Trophy for "leaderboards") -->
+                            <span class="text-3xl" role="img" aria-label="Trophy">🏆</span>
                         </div>
                         <h3 class="mt-4 text-xl font-semibold text-gray-900">Earn & Climb</h3>
                         <p class="mt-2 text-gray-500">
@@ -267,8 +282,9 @@
 
                     <!-- Feature Card 3: Actually Learn (Purple) -->
                     <div class="p-6 rounded-xl">
-                        <div class="inline-flex p-4 rounded-full bg-purple-100 text-purple-600">
-                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13.75A4.25 4.25 0 0118 22c-2.347 0-4.25-1.903-4.25-4.25V10M9 19c-2.347 0-4.25-1.903-4.25-4.25V7.5M9 19H5.5c-2.347 0-4.25-1.903-4.25-4.25V7.5"></path></svg>
+                        <div class="inline-flex p-4 rounded-full bg-purple-100">
+                            <!-- ICON REMAINS 🧠 (Brain for "Retention/Learn") -->
+                            <span class="text-3xl" role="img" aria-label="Brain">🧠</span>
                         </div>
                         <h3 class="mt-4 text-xl font-semibold text-gray-900">Actually Learn</h3>
                         <p class="mt-2 text-gray-500">
@@ -278,8 +294,9 @@
 
                     <!-- Feature Card 4: Play Together (Red) -->
                     <div class="p-6 rounded-xl">
-                        <div class="inline-flex p-4 rounded-full bg-red-100 text-red-600">
-                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h-5m-5 0h10m-10 0v-2a4 4 0 014-4h2a4 4 0 014 4v2m-10 0v-2a4 4 0 014-4h2a4 4 0 014 4v2m-10 0a2 2 0 100-4 2 2 0 000 4zm10 0a2 2 0 100-4 2 2 0 000 4z"></path></svg>
+                        <div class="inline-flex p-4 rounded-full bg-red-100">
+                            <!-- ICON REMAINS 🧑‍🤝‍🧑 (People holding hands for "Play Together/Friends") -->
+                            <span class="text-3xl" role="img" aria-label="Two People Holding Hands">🧑‍🤝‍🧑</span>
                         </div>
                         <h3 class="mt-4 text-xl font-semibold text-gray-900">Play Together</h3>
                         <p class="mt-2 text-gray-500">
@@ -296,21 +313,29 @@
                 
                 <div class="dark-card-gradient text-white p-12 sm:p-16 rounded-3xl w-full max-w-2xl text-center">
                     
-                    <!-- Rocket Icon -->
-                    <div class="inline-flex p-4 rounded-full bg-green-500/20 text-green-400 mb-6">
-                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.5 4.5l-3 3 6 6-3 3M19 19l-3-3 6-6-3-3M5 5l3 3m-3 3l3-3m-3 3l3 3m-3-3l3-3m-3 3l-3-3m-3 3l3-3m-3 3l3 3m-3-3l-3-3"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
+                    <!-- Logo Icon for CTA -->
+                    <div class="inline-flex p-4 rounded-full bg-green-500/20 mb-6">
+                        <!-- NEW SVG LOGO: CTA (48px / w-12 h-12) -->
+                        <svg class="w-12 h-12" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Background Circle/Rounded Square (Same as the image) -->
+                            <rect x="0" y="0" width="100" height="100" rx="20" fill="#10B981"/>
+                            <!-- Stylized 'V' (Using path for the geometric look) -->
+                            <path d="M 28 35 L 50 75 L 72 35 L 63 35 L 50 60 L 37 35 Z" fill="white"/>
+                        </svg>
                     </div>
 
                     <h2 class="text-4xl font-extrabold">
-                        Ready to join?
+                        Ready to level up your learning?
                     </h2>
+                    <!-- TEXT CHANGE: Updated description to reflect a paid/active product -->
                     <p class="mt-4 text-xl text-gray-300">
-                        Get in early. Help shape what Verza becomes. It's free, obviously.
+                        Explore thousands of learning games and premium features tailored for success.
                     </p>
 
                     <div class="mt-10 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center">
+                        <!-- BUTTON CHANGE: Updated text from "Join the waitlist" to "Start Premium Trial" -->
                         <button class="bg-green-500 text-white font-semibold py-3 px-8 rounded-lg hover:bg-green-600 transition duration-150 shadow-md flex items-center justify-center">
-                            Join the waitlist
+                            Start Premium Trial
                             <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                         </button>
                         <button class="bg-transparent text-white border-2 border-gray-500 font-semibold py-3 px-8 rounded-lg hover:bg-gray-700 transition duration-150 flex items-center justify-center">
@@ -329,9 +354,13 @@
     <footer class="bg-white border-t border-gray-200 mt-12 py-6">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center text-sm text-gray-500">
             <!-- Left: Logo -->
-            <div class="flex items-center space-x-1">
-                <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            <div class="flex items-center space-x-2">
+                <!-- NEW SVG LOGO: FOOTER (24px / w-6 h-6) -->
+                <svg class="w-6 h-6" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Background Circle/Rounded Square (Same as the image) -->
+                    <rect x="0" y="0" width="100" height="100" rx="20" fill="#10B981"/>
+                    <!-- Stylized 'V' (Using path for the geometric look) -->
+                    <path d="M 28 35 L 50 75 L 72 35 L 63 35 L 50 60 L 37 35 Z" fill="white"/>
                 </svg>
                 <span class="font-semibold text-gray-800">verza</span>
             </div>
@@ -343,7 +372,8 @@
 
             <!-- Right: Discord Link -->
             <div class="flex items-center space-x-1">
-                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.372 0 0 5.372 0 12c0 6.012 4.093 11.054 9.626 12.748L12 24l2.374-1.252C19.907 23.054 24 17.925 24 12c0-6.628-5.372-12-12-12zm4.332 17.587c-.66.67-1.493 1.168-2.424 1.488-1.077.36-2.196.536-3.328.536-1.132 0-2.251-.176-3.328-.536-.931-.32-1.764-.818-2.424-1.488-.046-.046-.088-.093-.13-.142-.518-.588-.737-1.39-.737-2.186v-3.737c0-.796.219-1.598.737-2.186.042-.049.084-.096.13-.142.66-.67 1.493-1.168 2.424-1.488 1.077-.36 2.196-.536 3.328-.536 1.132 0 2.251.176 3.328.536.931.32 1.764.818 2.424 1.488.046.046.088.093.13.142.518.588.737 1.39.737 2.186v3.737c0 .796-.219 1.598-.737 2.186-.042.049-.084.096-.13.142zm-5.187-8.381c-.55 0-1.002.454-1.002 1.002 0 .55.454 1.002 1.002 1.002.55 0 1.002-.454 1.002-1.002 0-.55-.454-1.002-1.002-1.002zm5.187 0c-.55 0-1.002.454-1.002 1.002 0 .55.454 1.002 1.002 1.002.55 0 1.002-.454 1.002-1.002 0-.55-.454-1.002-1.002-1.002z"/></svg>
+                <!-- DISCORD ICON RETAINED (Since it's a known logo) -->
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.372 0 0 5.372 0 12c0 6.012 4.093 11.054 9.626 12.748L12 24l2.374-1.252C19.907 23.054 24 17.925 24 12c0-6.628-5.372-12-12-12zm4.332 17.587c-.66.67-1.493 1.168-2.424 1.488-1.077.36-2.196.536-3.328.536-1.132 0-2.251-.176-3.328-.536-.931-.32-1.764-.818-2.424-1.488-.046-.046-.088-.093-.13-.142-.518-.588-.737-1.39-.737-2.186v-3.737c0-.796.219-1.598.737-2.186.042-.049.084-.096.13-.142.66-.67 1.493-1.168 2.424-1.488 1.077-.36 2.196-.536 3.328-.536.931.32 1.764.818 2.424 1.488.046.046.088.093.13.142.518.588.737 1.39.737 2.186v3.737c0 .796-.219 1.598-.737 2.186-.042.049-.084.096-.13.142zm-5.187-8.381c-.55 0-1.002.454-1.002 1.002 0 .55.454 1.002 1.002 1.002.55 0 1.002-.454 1.002-1.002 0-.55-.454-1.002-1.002-1.002zm5.187 0c-.55 0-1.002.454-1.002 1.002 0 .55.454 1.002 1.002 1.002.55 0 1.002-.454 1.002-1.002 0-.55-.454-1.002-1.002-1.002z"/></svg>
                 <span>Discord</span>
             </div>
         </div>
